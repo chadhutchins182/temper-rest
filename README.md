@@ -31,7 +31,7 @@ This code Dockerizes https://github.com/padelt/temper-python and adds a lightwei
 1. Pull the container
 
     ```bash
-    docker pull ghcr.io/chadhutchins182/temper-rest:latest
+    docker pull ghcr.io/chadhutchins182/temper-rest:main
     ```
 2. Make note of the bus and device id for your sensor
     ```bash
