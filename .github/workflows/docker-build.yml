@@ -30,6 +30,12 @@ jobs:
       - name: Test image id
         run: echo $IMAGE_ID
 
+      - name: Set tag name
+        run: echo "TAG_NAME=$IMAGE_ID:$(date +%s)" >> $GITHUB_ENV
+
+      - name: Test tag name
+        run: echo $TAG_NAME
+
       - name: Build the Docker image
         run: | 
           IMAGE_ID=$(echo ghcr.io/${{ github.repository }} | tr '[A-Z]' '[a-z]')
@@ -39,5 +45,5 @@ jobs:
       - name: Container image scan
         uses: Azure/container-scan@v0.1
         with:
-          image-name: $IMAGE_ID:$(date +%s)
+          image-name: $TAG_NAME
 
