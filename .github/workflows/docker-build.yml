@@ -25,4 +25,6 @@ jobs:
 
       - name: Container image scan
         uses: Azure/container-scan@v0.1
+        with:
+          image-name: $IMAGE_ID:$(date +%s)
 
