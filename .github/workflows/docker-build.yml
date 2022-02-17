@@ -22,3 +22,7 @@ jobs:
           IMAGE_ID=$(echo ghcr.io/${{ github.repository }} | tr '[A-Z]' '[a-z]')
           echo IMAGE_ID=$IMAGE_ID
           docker build . --file Dockerfile --tag $IMAGE_ID:$(date +%s)
+
+      - name: Container image scan
+        uses: Azure/container-scan@v0.1
+
