@@ -45,5 +45,5 @@ jobs:
       - name: Container image scan
         uses: Azure/container-scan@v0.1
         with:
-          image-name: $TAG_NAME
+          image-name: ${{env.TAG_NAME}}
 
